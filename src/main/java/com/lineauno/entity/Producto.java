@@ -16,9 +16,10 @@ import javax.persistence.*;
 public class Producto {
     @Id
     @Column(name = "id_pro")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idPro;
 
-    @Column(name = "codigo")
+    @Column(name = "codigo", unique = true)
     private Integer codigo;
 
     @Column(name = "saldo")
@@ -31,7 +32,7 @@ public class Producto {
     private Integer anioVencimiento;
 
     @Column(name = "estado")
-    private Byte estado;
+    private Boolean estado;
 
     @Column(name = "tipo_producto")
     private Integer tipoProducto;
