@@ -30,6 +30,17 @@ public class ProductoService {
             return null;
     }
 
+    public Producto update(Producto producto){
+        Producto objProducto = findById(producto.getIdPro());
+        objProducto.setTipoProducto(producto.getTipoProducto());
+        objProducto.setAnioAdquisición(producto.getAnioAdquisición());
+        objProducto.setAnioVencimiento(producto.getAnioVencimiento());
+        objProducto.setCodigo(producto.getCodigo());
+        objProducto.setEstado(producto.getEstado());
+        objProducto.setSaldo(producto.getSaldo());
+        return repository.save(objProducto);
+    }
+
     public List<Producto> findAll() {
         return (List<Producto>) repository.findAll();
     }
