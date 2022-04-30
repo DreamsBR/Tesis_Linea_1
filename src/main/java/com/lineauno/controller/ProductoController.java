@@ -24,6 +24,11 @@ public class ProductoController {
         return new ResponseEntity<>(service.save(producto), HttpStatus.OK);
     }
 
+    @PutMapping("/{idProd}")
+    public ResponseEntity<Producto> update(@RequestBody Producto producto){
+        return new ResponseEntity<>(service.update(producto), HttpStatus.OK);
+    }
+
     @GetMapping("/{idProd}")
     public ResponseEntity<Producto> findById(@PathVariable("idProd") Integer idProd){
         return new ResponseEntity<>(service.findById(idProd), HttpStatus.OK);
