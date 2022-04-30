@@ -1,8 +1,7 @@
 package com.lineauno.service;
 
-import com.lineauno.controller.TipoProductoController;
 import com.lineauno.entity.TipoProducto;
-import com.lineauno.respository.TipoProductoRepository;
+import com.lineauno.repository.TipoProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
