@@ -23,7 +23,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: 2. Clean with Maven
-      run: mvn clean
+      run: mvn clean -Dmaven.test.skip=true
     - name: 3. Compile with Maven
       run: mvn compile
     - name: 4. Build with Maven
