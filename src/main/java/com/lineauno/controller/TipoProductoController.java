@@ -1,6 +1,5 @@
 package com.lineauno.controller;
 
-import com.lineauno.entity.TipoProducto;
 import com.lineauno.service.TipoProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
