@@ -1,6 +1,5 @@
 package com.lineauno.controller;
 
-import com.lineauno.entity.Producto;
 import com.lineauno.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
