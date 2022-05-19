@@ -14,6 +14,8 @@ import java.io.Serializable;
 @Table(name = "usuarios")
 public class Usuario implements Serializable {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario", nullable = false)
