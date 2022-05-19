@@ -12,5 +12,6 @@ public interface MovimientoService {
     Movimiento save(Movimiento movimiento);
     Movimiento update(Integer id, Movimiento movimiento);
     void delete(Integer id);
+    List<Movimiento> getLastFiveMovements();
 
 }

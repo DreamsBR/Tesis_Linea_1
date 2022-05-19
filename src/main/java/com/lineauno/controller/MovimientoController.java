@@ -43,4 +43,9 @@ public class MovimientoController {
     public void deleteById(@PathVariable("id") Integer id){
         movimientoService.delete(id);
     }
+
+    @GetMapping("/historial")
+    public List<Movimiento> getLastFiveMovements(){
+        return movimientoService.getLastFiveMovements();
+    }
 }
