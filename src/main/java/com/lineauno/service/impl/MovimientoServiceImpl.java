@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -46,4 +47,11 @@ public class MovimientoServiceImpl implements MovimientoService {
     public void delete(Integer id) {
         movimientoRepository.deleteById(id);
     }
+
+    @Override
+    public List<Movimiento> getLastFiveMovements() {
+        return movimientoRepository.getLastFiveMovements();
+    }
+
+
 }
