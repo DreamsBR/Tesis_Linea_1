@@ -1,10 +1,12 @@
 package com.lineauno.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -13,25 +15,27 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "movimientos")
-public class Movimiento {
+public class Movimiento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idMovimiento", nullable = false)
-    private Integer id;
+    @Column(name = "id_movimiento", nullable = false)
+    private Integer id_movimiento;
 
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idUsuario", nullable = false)
-    private Usuario idUsuario;
+    @JoinColumn(name = "usuario", nullable = false)
+    private Usuario usuario;
 
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idTarjeta", nullable = false)
-    private Tarjeta idTarjeta;
+    @JoinColumn(name = "tarjeta", nullable = false)
+    private Tarjeta tarjeta;
 
     @Column(name = "fecha", nullable = false)
     private LocalDate fecha;
 
-    @Column(name = "montoTotal", nullable = false, precision = 12, scale = 2)
-    private BigDecimal montoTotal;
+    @Column(name = "monto_total", nullable = false, precision = 12, scale = 2)
+    private Double monto_total;
 
 }
