@@ -39,7 +39,6 @@ public class UsuarioServiceImp implements UsuarioService {
         objUsuario.setTipo_documento(usuario.getTipo_documento());
         objUsuario.setNumero_documento(usuario.getNumero_documento());
         objUsuario.setEmail(usuario.getEmail());
-        objUsuario.setContrasena(usuario.getContrasena());
         return usuarioRepository.save(objUsuario);
     }
 
