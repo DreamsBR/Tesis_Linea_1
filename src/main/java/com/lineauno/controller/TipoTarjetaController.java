@@ -2,6 +2,9 @@ package com.lineauno.controller;
 
 import com.lineauno.entity.TipoTarjeta;
 import com.lineauno.service.TipoTarjetaService;
+
+import lombok.extern.log4j.Log4j2;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
