@@ -6,10 +6,8 @@ import com.lineauno.service.MovimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDate;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -38,7 +36,7 @@ public class MovimientoServiceImpl implements MovimientoService {
         Movimiento objMovimiento = movimientoRepository.findById(id).get();
         objMovimiento.setFecha(LocalDate.now());
         objMovimiento.setTarjeta(movimiento.getTarjeta());
-        objMovimiento.setUsuario(movimiento.getUsuario());
+        //objMovimiento.setUsuario(movimiento.getUsuario());
         objMovimiento.setMonto_total(movimiento.getMonto_total());
         return movimientoRepository.save(objMovimiento);
     }

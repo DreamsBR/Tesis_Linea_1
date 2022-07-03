@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @AllArgsConstructor
@@ -22,10 +21,10 @@ public class Movimiento implements Serializable {
     @Column(name = "id_movimiento", nullable = false)
     private Integer id_movimiento;
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    /*@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "usuario", nullable = false)
-    private Usuario usuario;
+    private Usuario usuario;*/
 
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
