@@ -24,13 +24,4 @@ public class SpecificExceptionHandler {
         return new GenericResponse("valid-exception", Globals.RPTA_ERROR, Globals.OPERACION_ERRONEA, ex.getMessage());
     }
 
-    @ExceptionHandler(FileStorageException.class)
-    public GenericResponse fileStorageException(FileStorageException ex) {
-        return new GenericResponse("file-storage-exception", Globals.RPTA_ERROR, Globals.OPERACION_ERRONEA, ex.getMessage());
-    }
-
-    @ExceptionHandler(MyFileNotFoundException.class)
-    public GenericResponse myFileNotFoundException(MyFileNotFoundException exception) {
-        return new GenericResponse("my-file-not-found-exception", Globals.RPTA_ERROR, Globals.OPERACION_INCORRECTA, exception.getMessage());
-    }
 }

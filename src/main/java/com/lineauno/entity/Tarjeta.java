@@ -39,4 +39,8 @@ public class Tarjeta implements Serializable {
     @Column(name = "estado", nullable = false)
     private Boolean estado;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cliente_id", referencedColumnName = "id")
+    private Cliente cliente;
+
 }

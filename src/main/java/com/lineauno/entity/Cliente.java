@@ -1,5 +1,6 @@
 package com.lineauno.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import javax.persistence.*;
 
@@ -27,8 +28,8 @@ public class Cliente {
     private String numero_documento;
 
     /*@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "tarjeta", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "tarjeta", nullable = true)
     private Tarjeta tarjeta;*/
     
 }
