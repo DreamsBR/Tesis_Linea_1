@@ -26,10 +26,5 @@ public class Cliente {
     private String tipo_documento;
     @Column(name = "numero_documento", nullable = false, length = 8)
     private String numero_documento;
-
-    /*@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @ManyToOne(fetch = FetchType.LAZY, optional = true)
-    @JoinColumn(name = "tarjeta", nullable = true)
-    private Tarjeta tarjeta;*/
     
 }

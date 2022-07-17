@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -44,8 +44,8 @@ public class MovimientoController {
         movimientoService.delete(id);
     }
 
-    @GetMapping("/historial")
-    public List<Movimiento> getLastFiveMovements(){
-        return movimientoService.getLastFiveMovements();
+    @GetMapping("/historial/{email}")
+    public List<Movimiento> getLastFiveMovements(@PathVariable("email") String email){
+        return movimientoService.getLastFiveMovements(email);
     }
 }

@@ -1,6 +1,7 @@
 package com.lineauno.controller;
 
 import javax.servlet.http.HttpServletRequest;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,9 +18,11 @@ import com.lineauno.utils.GenericResponse;
 public class UsuarioController {
 
 	private final UsuarioService service;
+	//private PasswordEncoder passwordEncoder;
 
-	public UsuarioController(UsuarioService service) {
+	public UsuarioController(UsuarioService service/*,PasswordEncoder passwordEncoder*/) {
 		this.service = service;
+		//this.passwordEncoder = passwordEncoder;
 	}
 	
 	@PostMapping("/login")
@@ -31,6 +34,10 @@ public class UsuarioController {
 	
 	@PostMapping
 	public GenericResponse<Usuario> guardar(@RequestBody Usuario usuario){
+		/*String password = usuario.getClave();
+
+		usuario.setClave(passwordEncoder.encode(password));*/
+
 		return this.service.guardarUsuario(usuario);
 	}
 	

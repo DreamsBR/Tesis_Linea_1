@@ -6,7 +6,8 @@ import com.lineauno.service.MovimientoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -34,7 +35,7 @@ public class MovimientoServiceImpl implements MovimientoService {
     @Override
     public Movimiento update(Integer id, Movimiento movimiento) {
         Movimiento objMovimiento = movimientoRepository.findById(id).get();
-        objMovimiento.setFecha(LocalDate.now());
+        objMovimiento.setFecha(LocalDateTime.now());
         objMovimiento.setTarjeta(movimiento.getTarjeta());
         //objMovimiento.setUsuario(movimiento.getUsuario());
         objMovimiento.setMonto_total(movimiento.getMonto_total());
@@ -47,8 +48,8 @@ public class MovimientoServiceImpl implements MovimientoService {
     }
 
     @Override
-    public List<Movimiento> getLastFiveMovements() {
-        return movimientoRepository.getLastFiveMovements();
+    public List<Movimiento> getLastFiveMovements(String email) {
+        return movimientoRepository.getLastFiveMovements(email);
     }
 
 
