@@ -1,6 +1,7 @@
 package com.lineauno.service;
 
 
+import com.lineauno.dto.GenerarMovimientoDTO;
 import com.lineauno.entity.Movimiento;
 import com.lineauno.utils.GenericResponse;
 
@@ -14,5 +15,5 @@ public interface MovimientoService {
     Movimiento update(Integer id, Movimiento movimiento);
     void delete(Integer id);
     GenericResponse<List<Movimiento>> getLastFiveMovements(String email);
-
+    GenericResponse recargarSaldo(GenerarMovimientoDTO dto);
 }

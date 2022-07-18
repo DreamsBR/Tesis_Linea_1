@@ -79,6 +79,11 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+        <dependency>
+            <groupId>com.github.culqi</groupId>
+            <artifactId>culqi-java</artifactId>
+            <version>v1.1.9</version>
+        </dependency>
     </dependencies>
 
     <build>
