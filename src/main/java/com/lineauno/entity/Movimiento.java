@@ -10,6 +10,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -26,8 +27,8 @@ public class Movimiento implements Serializable {
     private Integer id_movimiento;
 
     @Column(name = "fecha", nullable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime fecha;
+    @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Lima")
+    private Date fecha;
 
     @Column(name = "monto_total", nullable = false)
     private Double monto_total;

@@ -3,6 +3,8 @@ package com.lineauno.service.impl;
 import com.lineauno.entity.Movimiento;
 import com.lineauno.repository.MovimientoRepository;
 import com.lineauno.service.MovimientoService;
+import com.lineauno.utils.GenericResponse;
+import com.lineauno.utils.Globals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,7 +37,7 @@ public class MovimientoServiceImpl implements MovimientoService {
     @Override
     public Movimiento update(Integer id, Movimiento movimiento) {
         Movimiento objMovimiento = movimientoRepository.findById(id).get();
-        objMovimiento.setFecha(LocalDateTime.now());
+        objMovimiento.setFecha(movimiento.getFecha());
         objMovimiento.setTarjeta(movimiento.getTarjeta());
         //objMovimiento.setUsuario(movimiento.getUsuario());
         objMovimiento.setMonto_total(movimiento.getMonto_total());
@@ -48,8 +50,8 @@ public class MovimientoServiceImpl implements MovimientoService {
     }
 
     @Override
-    public List<Movimiento> getLastFiveMovements(String email) {
-        return movimientoRepository.getLastFiveMovements(email);
+    public GenericResponse getLastFiveMovements(String email) {
+        return new GenericResponse(Globals.TIPO_DATA, Globals.RPTA_OK, Globals.OPERACION_CORRECTA, this.movimientoRepository.getLastFiveMovements(email));
     }
 
 

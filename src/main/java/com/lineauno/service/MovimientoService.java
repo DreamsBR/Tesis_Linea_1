@@ -2,6 +2,7 @@ package com.lineauno.service;
 
 
 import com.lineauno.entity.Movimiento;
+import com.lineauno.utils.GenericResponse;
 
 import java.util.List;
 
@@ -12,6 +13,6 @@ public interface MovimientoService {
     Movimiento save(Movimiento movimiento);
     Movimiento update(Integer id, Movimiento movimiento);
     void delete(Integer id);
-    List<Movimiento> getLastFiveMovements(String email);
+    GenericResponse<List<Movimiento>> getLastFiveMovements(String email);
 
 }

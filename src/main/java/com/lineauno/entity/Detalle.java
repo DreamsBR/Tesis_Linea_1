@@ -8,9 +8,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,7 +36,7 @@ public class Detalle implements Serializable {
     private Double monto_total;
 
     @Column(name = "fecha", nullable = false)
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime fecha;
+    @JsonFormat(pattern = "dd-MM-yyyy", timezone = "America/Lima")
+    private Date fecha;
 
 }
