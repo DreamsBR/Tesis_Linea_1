@@ -76,5 +76,10 @@ public class MovimientoServiceImpl implements MovimientoService {
         return new GenericResponse(Globals.TIPO_DATA, Globals.RPTA_OK, Globals.OPERACION_CORRECTA, dto);
     }
 
+    @Override
+    public double getMontoTotal(String email) {
+        return movimientoRepository.getMontoTotal(email);
+    }
+
 
 }

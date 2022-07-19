@@ -6,6 +6,7 @@ import com.lineauno.entity.Movimiento;
 import com.lineauno.service.DetalleService;
 import com.lineauno.service.MovimientoService;
 import com.lineauno.utils.GenericResponse;
+import com.lineauno.utils.Globals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -89,5 +90,10 @@ public class MovimientoController {
         System.out.println("Hola -- > " + dto.getMovimiento().getId_movimiento());
 
         return this.movimientoService.recargarSaldo(dto);
+    }
+
+    @GetMapping("/montoTotal/{email}")
+    public double getMontoTotal(@PathVariable("email") String email){
+        return movimientoService.getMontoTotal(email);
     }
 }
