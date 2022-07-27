@@ -1,13 +1,17 @@
 package com.lineauno.service.impl;
 
 import com.lineauno.entity.Tarjeta;
+import com.lineauno.entity.Usuario;
 import com.lineauno.repository.TarjetaRepository;
 import com.lineauno.service.TarjetaService;
+import com.lineauno.utils.GenericResponse;
+import com.lineauno.utils.Globals;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -46,5 +50,16 @@ public class TarjetaServiceImpl implements TarjetaService {
     @Override
     public void delete(Integer id) {
         tarjetaRepository.deleteById(id);
+    }
+
+    @Override
+    public GenericResponse<Tarjeta> getTarjetaUsuario(int id) {
+        Optional<Tarjeta> optionalTarjeta = this.tarjetaRepository.getTarjetaUsuario(id);
+        if (optionalTarjeta.isPresent()) {
+            return new GenericResponse<>(Globals.TIPO_AUTH, Globals.RPTA_OK, "Tarjeta encontrada", optionalTarjeta.get());
+        }
+        else {
+            return new GenericResponse<>(Globals.TIPO_AUTH, Globals.RPTA_WARNING, "Tarjeta no encontrada", new Tarjeta());
+        }
     }
 }

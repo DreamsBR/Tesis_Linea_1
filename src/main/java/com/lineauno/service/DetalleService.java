@@ -17,7 +17,7 @@ public class DetalleService {
         this.repository = repository;
     };
 
-    public void guardarDetalle(Iterable<Detalle> detalle) {
-        this.repository.saveAll(detalle);
+    public void guardarDetalle(Detalle detalle) {
+        this.repository.save(detalle);
     }
 }

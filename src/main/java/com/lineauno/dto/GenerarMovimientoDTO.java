@@ -14,7 +14,7 @@ public class GenerarMovimientoDTO {
     private Movimiento movimiento;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Iterable<Detalle> detalle;
+    private Detalle detalle;
 
     private Cliente cliente;
 

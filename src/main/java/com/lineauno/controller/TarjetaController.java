@@ -1,13 +1,16 @@
 package com.lineauno.controller;
 
 import com.lineauno.entity.Tarjeta;
+import com.lineauno.entity.Usuario;
 import com.lineauno.service.TarjetaService;
+import com.lineauno.utils.GenericResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -40,6 +43,11 @@ public class TarjetaController {
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable("id") Integer id){
         tarjetaService.delete(id);
+    }
+
+    @GetMapping("/usuario/{id}")
+    public GenericResponse<Tarjeta> getTarjetaUsuario(@PathVariable("id") int id){
+        return tarjetaService.getTarjetaUsuario(id);
     }
 
 }

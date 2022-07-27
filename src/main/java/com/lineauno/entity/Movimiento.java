@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "movimientos")
-public class Movimiento implements Serializable {
+public class Movimiento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movimiento", nullable = false)
