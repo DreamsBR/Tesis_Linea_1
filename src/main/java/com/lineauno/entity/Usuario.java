@@ -6,7 +6,6 @@ import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Data
 @Entity
 @Table(name = "usuarios")

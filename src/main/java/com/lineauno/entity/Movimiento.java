@@ -16,7 +16,6 @@ import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Data
 @Entity
 @Table(name = "movimientos")

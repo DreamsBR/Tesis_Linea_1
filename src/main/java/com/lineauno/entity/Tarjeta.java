@@ -43,4 +43,7 @@ public class Tarjeta implements Serializable {
     @JoinColumn(name = "cliente_id", referencedColumnName = "id")
     private Cliente cliente;
 
+    public Tarjeta(Integer id_tarjeta) {
+        this.id_tarjeta = id_tarjeta;
+    }
 }

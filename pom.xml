@@ -84,6 +84,16 @@
             <artifactId>culqi-java</artifactId>
             <version>v1.1.9</version>
         </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.18.1</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports-fonts</artifactId>
+            <version>6.18.1</version>
+        </dependency>
     </dependencies>
 
     <build>

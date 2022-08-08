@@ -7,7 +7,6 @@ import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @Data
 @Entity
 @Table(name = "clientes")

@@ -3,11 +3,10 @@ package com.lineauno.controller;
 import com.culqi.Culqi;
 import com.lineauno.dto.GenerarMovimientoDTO;
 import com.lineauno.entity.Movimiento;
-import com.lineauno.service.DetalleService;
 import com.lineauno.service.MovimientoService;
 import com.lineauno.utils.GenericResponse;
-import com.lineauno.utils.Globals;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -63,7 +62,7 @@ public class MovimientoController {
 
         try {
             Culqi culqi = new Culqi();
-            culqi.secret_key = "sk_test_6033e299086641e3";
+            culqi.secret_key = "sk_test_io0hSzqHLrcv4V5l";
             Map<String, Object> charge = new HashMap<String, Object>();
             Map<String, Object> metadata = new HashMap<String, Object>();
             String token = dto.getMovimiento().getToken().toString();
@@ -95,5 +94,11 @@ public class MovimientoController {
     @GetMapping("/montoTotal/{email}")
     public double getMontoTotal(@PathVariable("email") String email){
         return movimientoService.getMontoTotal(email);
+    }
+
+    //EXPORTAR PDF DE ORDEN
+    @GetMapping("/exportInvoice")
+    public ResponseEntity<Resource> exportInvoice(){
+        return this.movimientoService.exportInvoice();
     }
 }
